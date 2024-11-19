@@ -9,7 +9,6 @@ const UserProfile = () => {
   const [profilePicture, setProfilePicture] = useState(
     location.state?.user?.profilePicture || null
   );
-  console.log("Hereeee?", location.state?.user?.profilePicture);
 
   const { user } = location.state || {};
   if (!user) {
