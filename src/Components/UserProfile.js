@@ -9,6 +9,7 @@ const UserProfile = () => {
   const [profilePicture, setProfilePicture] = useState(
     location.state?.user?.profilePicture || null
   );
+  console.log("Hereeee?", location.state?.user?.profilePicture);
 
   const { user } = location.state || {};
   if (!user) {
@@ -45,7 +46,7 @@ const UserProfile = () => {
         }
       );
 
-      const updatedProfilePictureUrl = response.data.s3Url;
+      const updatedProfilePictureUrl = response.data.url;
       console.log("response.s3Url", response.data.url);
       setProfilePicture(updatedProfilePictureUrl);
     } catch (error) {
